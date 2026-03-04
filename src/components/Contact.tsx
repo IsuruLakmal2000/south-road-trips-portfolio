@@ -178,7 +178,15 @@ const Contact = () => {
             <p>Visit our office for personalized service and assistance</p>
           </div>
           <div className="map-container">
-            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDeW1dcvAarayGmg5G1LWl0DI--bVtX_Tk&q=South+Road+Trips+Ahangama+Sri+Lanka" width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="South Road Trips Location" />
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31745.449573286278!2d80.33675193786618!3d5.9697658511560725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae115b2a5f448c7%3A0x8b2d238c24002d11!2sSouth%20Road%20Trips!5e0!3m2!1sen!2slk!4v1772615428392!5m2!1sen!2slk" 
+              width="600" 
+              height="450" 
+              style={{border: "0"}}
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
           <div className="map-link">
             <a
