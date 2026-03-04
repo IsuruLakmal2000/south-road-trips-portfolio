@@ -1,6 +1,6 @@
 import './About.css';
 import customerImg1 from '../assets/testimonials/Ines.jpeg'
-import customerImg2 from '../assets/testimonials/Valentin.jpeg'
+import customerImg2 from '../assets/testimonials/valentin.jpeg'
 import customerImg3 from '../assets/testimonials/Talis.jpeg'
 import customerImg4 from '../assets/testimonials/customer4.png'
 
