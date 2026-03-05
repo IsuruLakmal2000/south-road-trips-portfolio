@@ -227,17 +227,137 @@
   }
 
   .tours-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tours-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .tours-title {
+    font-size: 2rem;
+  }
+
+  .tours-subtitle {
+    font-size: 1rem;
+  }
+
+  .tours-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tour-card {
+    flex-direction: column;
+  }
+
+  .tour-image-wrapper {
+    height: 220px;
+  }
+
+  .tour-content {
+    padding: 1.5rem;
+  }
+
+  .tour-name {
+    font-size: 1.3rem;
+  }
+
+  .tour-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
 @media (max-width: 480px) {
+  .tours-section {
+    padding: 2rem 1rem;
+  }
+
+  .tours-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .tours-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .tours-grid {
+    gap: 1rem;
+  }
+
+  .tour-image-wrapper {
+    height: 180px;
+  }
+
+  .tour-duration {
+    top: 0.8rem;
+    left: 0.8rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .tour-content {
+    padding: 1.2rem;
+  }
+
   .tour-header-info {
     flex-direction: column;
     gap: 0.8rem;
   }
 
+  .tour-name {
+    font-size: 1.1rem;
+  }
+
+  .tour-rating {
+    font-size: 0.85rem;
+  }
+
+  .tour-rating svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tour-description {
+    margin: 0 0 1rem 0;
+    font-size: 0.85rem;
+  }
+
+  .destinations-title {
+    font-size: 0.8rem;
+  }
+
+  .destination-tags {
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
   .tour-highlights {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .highlight {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .highlight svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .book-tour-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
