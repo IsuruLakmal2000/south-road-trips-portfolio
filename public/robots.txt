@@ -1,0 +1,24 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: *.map
+
+# Google Crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing Crawlers
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Other Crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://southroadtrips.com/sitemap.xml

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import './HeaderSlideshow.css';
 
 // Import images
-import image1 from '../assets/header-images/pexels-abdghat-1631677.jpg';
-import image2 from '../assets/header-images/pexels-padrinan-255379.jpg';
-import image3 from '../assets/header-images/pexels-pixabay-220072.jpg';
+import image1 from '../assets/header-images/header-img1.jpg';
+import image2 from '../assets/header-images/header-img2.jpg';
+import image3 from '../assets/header-images/header-img3.jpg';
 
 const HeaderSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
