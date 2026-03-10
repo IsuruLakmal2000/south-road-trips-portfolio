@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-brand">
             <div className="footer-logo">
-              <img src="/src/assets/Asset-3.png" alt="South Road Trips" className="footer-logo-image" />
+              <img src="/src/assets/logo-new.png" alt="South Road Trips" className="footer-logo-image" />
             </div>
             <p className="footer-description">
               Your trusted partner for unforgettable journeys. Explore the world with comfort, 

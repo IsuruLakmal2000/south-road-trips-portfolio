@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header-inner">
         
         <div className="logo">
-          <img src="/src/assets/Asset-3.png" alt="South Road Trips" className="logo-image" />
+          <img src="/src/assets/logo-new.png" alt="South Road Trips" className="logo-image" />
         </div>
 
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
