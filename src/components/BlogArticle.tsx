@@ -1,12 +1,14 @@
 import './BlogArticle.css';
 import { blogArticles } from '../data/blogArticles';
 import type { BlogArticleData, BlogArticleContent } from '../data/blogArticles';
+import { useNavigation } from '../context/PageContext';
 
 interface BlogArticleProps {
   articleId?: string;
 }
 
 const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
+  const { goToBlog } = useNavigation();
   const article = blogArticles[articleId] as BlogArticleData | undefined;
 
   if (!article) {
@@ -106,28 +108,21 @@ const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
                 <div key={index} className="article-cta-block">
                   <div className="cta-card">
                     <h3>Ready for Your Adventure?</h3>
-                    <p>Rent a scooter and explore the wonders of the south coast with South Road Trips</p>
+                    <p>Inquire more about tours and rental options</p>
                     <a
-                      href="https://wa.me/94764549169?text=Hi%20South%20Road%20Trips!%20I'd%20like%20to%20rent%20a%20scooter%20for%20exploring%20the%20south%20coast.%20Can%20you%20help%20me%3F"
+                      href="https://wa.me/94764549169?text=Hi%20South%20Road%20Trips!%20I'd%20like%20to%20inquire%20about%20tours%20and%20rental%20services."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="article-cta-button"
                     >
-                      Book Your Scooter on WhatsApp
+                      Inquire Now
                       <svg className="cta-arrow" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </a>
                   </div>
 
-                  <div className="article-social-block">
-                    <p>Stay connected with South Road Trips for more travel tips and hidden gems across Sri Lanka</p>
-                    <div className="social-links">
-                      <a href="https://wa.me/94764549169" target="_blank" rel="noopener noreferrer" className="social-link">
-                        WhatsApp
-                      </a>
-                    </div>
-                  </div>
+                  
                 </div>
               );
             }
@@ -138,12 +133,12 @@ const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
 
         {/* Back Button */}
         <div className="article-footer">
-          <a href="#blog" className="back-to-blog-btn">
+          <button type="button" onClick={goToBlog} className="back-to-blog-btn">
             <svg className="back-arrow" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
             </svg>
-            Back to Blog
-          </a>
+            Back to All Articles
+          </button>
         </div>
       </div>
     </section>
@@ -151,3 +146,4 @@ const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
 };
 
 export default BlogArticle;
+

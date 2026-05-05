@@ -1,5 +1,7 @@
 import turtleVideo from '../assets/blog/sea-turtle-conservation.mp4'
 import turtleImage from '../assets/blog/sea-turtle.jpg'
+import kayakingVideo from '../assets/blog/kayaking/hikkaduwa-kayaking.mp4'
+import kayakingImage from '../assets/blog/kayaking/kayaking-cover.jpeg'
 import leapardIMG from '../assets/blog/yala-leapard.jpg'
 import srilankanroadsIMG from '../assets/blog/sri-lankan-roads.jpg'
 
@@ -27,6 +29,12 @@ export interface BlogArticleContent {
 export interface BlogArticleData extends BlogPostPreview {
   content: BlogArticleContent[];
   videoUrl?: string;
+  metaDescription?: string;
+  keywords?: string[];
+  slug?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 }
 
 export const blogArticles: { [key: string]: BlogArticleData } = {
@@ -35,11 +43,17 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     title: 'Visit the Sea Turtle Conservation Center Near Ahangama',
     excerpt: 'If you are traveling along the beautiful south coast of Sri Lanka, visiting a Sea Turtle Conservation Center is a wonderful experience you should not miss. Located only about 7 km from Ahangama...',
     date: 'March 14, 2025',
-    author: 'Sarah Johnson',
+    author: 'South Road Trips Team',
     category: 'Culture & Wildlife',
     image: turtleImage,
     readTime: '8 min read',
     videoUrl: turtleVideo,
+    slug: 'sea-turtle-conservation-ahangama',
+    metaDescription: 'Visit the Sea Turtle Conservation Center near Ahangama, Sri Lanka. Learn about endangered sea turtles, see hatchlings, and support marine conservation efforts.',
+    keywords: ['sea turtle conservation', 'turtle sanctuary Sri Lanka', 'Ahangama wildlife', 'Sri Lanka marine life', 'sea turtle tour', 'marine conservation', 'South coast Sri Lanka attractions'],
+    ogTitle: 'Sea Turtle Conservation Center Near Ahangama | South Road Trips',
+    ogDescription: 'Experience sea turtle conservation at this dedicated center near Ahangama. See baby turtles, rescued animals, and learn about marine protection.',
+    ogImage: turtleImage,
     content: [
       {
         type: 'intro',
@@ -128,15 +142,118 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     ]
   },
 
+  'hikkaduwa-kayaking': {
+    id: 'hikkaduwa-kayaking',
+    title: 'Kayaking in Hikkaduwa Lagoon',
+    excerpt: 'Explore calm lagoon waters, guided paddleboard and kayak tours, plus a traditional catamaran safari in Hikkaduwa for an unforgettable day on the water.',
+    date: 'May 5, 2026',
+    author: 'South Road Trips Team',
+    category: 'Adventure',
+    image: kayakingImage,
+    readTime: '6 min read',
+    videoUrl: kayakingVideo,
+    slug: 'kayaking-hikkaduwa-lagoon',
+    metaDescription: 'Discover the best kayaking experience in Hikkaduwa Lagoon, Sri Lanka. Explore guided paddleboard tours, kayak adventures, and traditional catamaran safaris with South Road Trips.',
+    keywords: [
+      'Kayaking in sri lanka',
+      'sri lanka kayaking',
+      'Kayaking in Hikkaduwa',
+      'kayaking in galle',
+      'Sri lanka kayak',
+      'sri lanka tours',
+      'sri lanka activities'
+    ],
+    ogTitle: 'Best Kayaking Tours in Hikkaduwa Lagoon | South Road Trips',
+    ogDescription: 'Experience guided kayaking, paddleboarding, and catamaran safaris in Hikkaduwa Lagoon. Perfect for families, couples, and adventure seekers in Sri Lanka.',
+    ogImage: kayakingImage,
+    content: [
+      {
+        type: 'intro',
+        text: 'Hikkaduwa Lagoon is a wonderful destination for paddling through calm waters, spotting birdlife, and enjoying a traditional Sri Lankan lagoon safari. Whether you choose a guided paddleboard tour, kayak tour, or a classic catamaran ride, this adventure is perfect for families, couples, and groups seeking a peaceful nature escape.'
+      },
+      {
+        type: 'section',
+        title: 'Paddleboard Guided Tour',
+        content: 'A guided paddleboard tour in Hikkaduwa Lagoon is ideal for beginners and experienced paddlers alike. Your guide will help you find the best routes through the mangroves, point out local wildlife, and share insights about the lagoon ecosystem.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Easy-to-follow instructions from the guide',
+          'Smooth paddling across calm lagoon water',
+          'Close sightings of herons, kingfishers, and native birds',
+          'A fun activity for couples and friends'
+        ],
+        endText: 'The paddleboard tour offers a relaxed way to connect with nature while enjoying impressive lagoon scenery.'
+      },
+      {
+        type: 'section',
+        title: 'Kayak Guided Tour',
+        content: 'The kayak guided tour is a great choice for a more immersive experience on the water. Glide through narrow channels, discover hidden lagoon corners, and enjoy the peaceful rhythm of your paddle as you explore this coastal paradise.'
+      },
+      {
+        type: 'highlight-list',
+        items: [
+          {
+            title: 'Expert Local Guides',
+            desc: 'Experienced guides lead the tour, ensuring your safety and sharing stories about the lagoon and its wildlife.'
+          },
+          {
+            title: 'Flexible Pacing',
+            desc: 'Move at your own pace and stop whenever you want to take photos or simply admire the view.'
+          },
+          {
+            title: 'Perfect for Adventure Seekers',
+            desc: 'Kayaking is an active way to explore the lagoon while still feeling calm and connected to nature.'
+          }
+        ],
+        endText: 'A guided kayak tour is both energizing and relaxing, and it makes the Hikkaduwa Lagoon experience truly memorable.'
+      },
+      {
+        type: 'section',
+        title: 'Traditional Lagoon Safari by Catamaran',
+        content: 'For a classic lagoon excursion, the traditional catamaran safari offers a gentle cruise through the water, complete with local charm and scenic views. This is a wonderful way to experience the lagoon without needing any paddling skill.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Relaxing catamaran ride through the lagoon',
+          'Perfect for guests who prefer a slower pace',
+          'Chance to learn about local fishing and lagoon life',
+          'Beautiful photo opportunities at sunset or in soft morning light'
+        ],
+        endText: 'The traditional catamaran safari adds a cultural touch to your Hikkaduwa adventure, especially when shared with family or friends.'
+      },
+      {
+        type: 'section',
+        title: 'Tips for Your Hikkaduwa Kayaking Trip',
+        content: 'Bring sunscreen, a hat, and a refillable water bottle. Wear comfortable swimwear and lightweight clothing that dries quickly. If you want the best conditions, plan your tour for early morning or late afternoon when the lagoon is calm and the light is soft.'
+      },
+      {
+        type: 'video',
+        src: kayakingVideo
+      },
+      {
+        type: 'cta'
+      }
+    ]
+  },
+
   'hidden-beaches': {
     id: 'hidden-beaches',
     title: 'Hidden Gems: Secret Beaches of Sri Lanka',
     excerpt: 'Discover the most beautiful and secluded beaches that only locals know about. From pristine white sands to crystal clear waters...',
     date: 'March 12, 2025',
-    author: 'Sarah Johnson',
+    author: 'South Road Trips Team',
     category: 'Travel Tips',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop',
     readTime: '5 min read',
+    slug: 'hidden-beaches-sri-lanka',
+    metaDescription: 'Discover secret beaches in Sri Lanka with our guide to hidden gems. Find pristine white sand beaches, crystal clear waters, and authentic beach experiences.',
+    keywords: ['secret beaches Sri Lanka', 'hidden beaches', 'Sri Lanka beaches', 'beach travel guide', 'south coast beaches', 'secluded beaches', 'beach vacation Sri Lanka'],
+    ogTitle: 'Hidden Secret Beaches of Sri Lanka | South Road Trips',
+    ogDescription: 'Explore the most beautiful and secluded beaches in Sri Lanka that only locals know about. Pristine white sands and crystal clear waters await.',
+    ogImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop',
     content: [
       {
         type: 'intro',
@@ -197,10 +314,16 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     title: 'Wildlife Photography Guide: Capturing Leopards in Yala',
     excerpt: 'Professional tips on how to photograph elusive leopards and other wildlife in Sri Lanka\'s most famous national park...',
     date: 'March 5, 2025',
-    author: 'Michael Chen',
+    author: 'South Road Trips Team',
     category: 'Photography',
     image: leapardIMG,
     readTime: '7 min read',
+    slug: 'wildlife-photography-yala-leopards',
+    metaDescription: 'Learn professional wildlife photography techniques for capturing leopards and wildlife in Yala National Park. Expert tips for Sri Lanka safari photography.',
+    keywords: ['wildlife photography', 'leopard photography', 'Yala National Park', 'safari photography', 'wildlife guide', 'Sri Lanka wildlife tour', 'nature photography tips'],
+    ogTitle: 'Wildlife Photography Guide: Leopards in Yala Park | South Road Trips',
+    ogDescription: 'Master wildlife photography with our expert guide to capturing leopards and animals in Yala National Park, Sri Lanka\'s premier wildlife destination.',
+    ogImage: leapardIMG,
     content: [
       {
         type: 'intro',
@@ -251,10 +374,16 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     title: 'Best Time to Visit: Seasons in Sri Lanka',
     excerpt: 'A comprehensive guide to understanding Sri Lankan weather patterns and choosing the perfect time for your road trip adventure...',
     date: 'February 28, 2025',
-    author: 'Emma Rodriguez',
+    author: 'South Road Trips Team',
     category: 'Travel Tips',
     image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop',
     readTime: '6 min read',
+    slug: 'best-time-visit-sri-lanka',
+    metaDescription: 'Discover the best time to visit Sri Lanka with our comprehensive guide to seasons, weather, and travel conditions throughout the year.',
+    keywords: ['best time to visit Sri Lanka', 'Sri Lanka weather', 'Sri Lanka seasons', 'when to visit Sri Lanka', 'travel guide Sri Lanka', 'monsoon season', 'Sri Lanka climate'],
+    ogTitle: 'Best Time to Visit Sri Lanka | Complete Seasonal Guide | South Road Trips',
+    ogDescription: 'Plan your perfect trip with our guide to Sri Lanka\'s seasons and weather patterns. Discover the best time to visit for your adventure.',
+    ogImage: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=600&fit=crop',
     content: [
       {
         type: 'intro',
@@ -312,10 +441,16 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     title: 'Local Cuisine You Must Try on Your Sri Lankan Road Trip',
     excerpt: 'Explore the authentic flavors of Sri Lanka. From street food to traditional curries, here are the must-try dishes...',
     date: 'February 21, 2025',
-    author: 'Dev Patel',
+    author: 'South Road Trips Team',
     category: 'Culture',
     image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&h=600&fit=crop',
     readTime: '5 min read',
+    slug: 'sri-lankan-cuisine-guide',
+    metaDescription: 'Explore Sri Lankan cuisine with our food guide. Discover authentic dishes, traditional recipes, and the best restaurants for local flavors.',
+    keywords: ['Sri Lankan food', 'Sri Lankan cuisine', 'local dishes', 'curry recipes', 'street food Sri Lanka', 'food guide', 'authentic Sri Lankan recipes'],
+    ogTitle: 'Sri Lankan Food Guide: Must-Try Dishes & Recipes | South Road Trips',
+    ogDescription: 'Discover authentic Sri Lankan cuisine. Learn about traditional dishes, get recipes, and find the best places to eat local food.',
+    ogImage: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&h=600&fit=crop',
     content: [
       {
         type: 'intro',
@@ -371,10 +506,16 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     title: 'Road Trip Safety: Essential Tips for Driving in Sri Lanka',
     excerpt: 'Everything you need to know about road conditions, vehicle requirements, and safety protocols for a secure journey...',
     date: 'February 14, 2025',
-    author: 'James Wilson',
+    author: 'South Road Trips Team',
     category: 'Safety',
     image: srilankanroadsIMG,
     readTime: '8 min read',
+    slug: 'road-trip-safety-sri-lanka',
+    metaDescription: 'Stay safe on your Sri Lanka road trip with our complete safety guide. Learn about scooter rental, traffic rules, and essential travel tips.',
+    keywords: ['road trip safety', 'scooter rental safety', 'Sri Lanka driving rules', 'travel safety tips', 'road safety guide', 'adventure safety', 'transportation safety'],
+    ogTitle: 'Safe Road Trip Guide for Sri Lanka | South Road Trips',
+    ogDescription: 'Complete road trip safety guide for Sri Lanka. Learn driving rules, scooter safety, and essential tips for a safe adventure.',
+    ogImage: srilankanroadsIMG,
     content: [
       {
         type: 'intro',
@@ -430,10 +571,16 @@ export const blogArticles: { [key: string]: BlogArticleData } = {
     title: 'Adventure Activities Beyond the Standard Tours',
     excerpt: 'Looking for adrenaline? Discover rock climbing, surfing, hiking, and other exciting activities throughout Sri Lanka...',
     date: 'February 7, 2025',
-    author: 'Alex Thompson',
+    author: 'South Road Trips Team',
     category: 'Adventure',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop',
     readTime: '6 min read',
+    slug: 'adventure-activities-sri-lanka',
+    metaDescription: 'Discover thrilling adventure activities in Sri Lanka. Rock climbing, paragliding, surfing, diving, and more exciting activities for adrenaline seekers.',
+    keywords: ['adventure activities Sri Lanka', 'rock climbing', 'paragliding', 'surfing Sri Lanka', 'scuba diving', 'water sports', 'extreme sports Sri Lanka'],
+    ogTitle: 'Top Adventure Activities in Sri Lanka | Thrilling Experiences | South Road Trips',
+    ogDescription: 'Explore exciting adventure activities in Sri Lanka. Surfing, rock climbing, paragliding, diving, and more thrilling experiences for adventure seekers.',
+    ogImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop',
     content: [
       {
         type: 'intro',
@@ -492,5 +639,6 @@ export const blogPostPreviews: BlogPostPreview[] = [
   blogArticles['best-time-visit'],
   blogArticles['local-cuisine'],
   blogArticles['road-trip-safety'],
-  blogArticles['adventure-activities']
+  blogArticles['adventure-activities'],
+  blogArticles['hikkaduwa-kayaking']
 ];

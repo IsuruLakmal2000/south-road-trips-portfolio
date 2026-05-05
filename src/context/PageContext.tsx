@@ -8,6 +8,7 @@ interface PageContextType {
   articleId: string | null;
   navigateToArticle: (articleId: string) => void;
   goHome: () => void;
+  goToBlog: () => void;
 }
 
 export const PageContext = createContext<PageContextType | undefined>(undefined);
@@ -32,8 +33,21 @@ export const PageProvider = ({ children }: PageProviderProps) => {
     window.scrollTo(0, 0);
   };
 
+  const goToBlog = () => {
+    setCurrentPage('home');
+    setArticleId(null);
+    setTimeout(() => {
+      const blogSection = document.getElementById('blog');
+      if (blogSection) {
+        blogSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 120);
+  };
+
   return (
-    <PageContext.Provider value={{ currentPage, articleId, navigateToArticle, goHome }}>
+    <PageContext.Provider value={{ currentPage, articleId, navigateToArticle, goHome, goToBlog }}>
       {children}
     </PageContext.Provider>
   );
