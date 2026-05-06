@@ -1,22 +1,32 @@
-import './ArticlePage.css';
-import BlogArticle from '../components/BlogArticle';
-import { useNavigation } from '../context/PageContext';
+import { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import './ArticlePage.css'
+import BlogArticle from '../components/BlogArticle'
 
 const ArticlePage = () => {
-  const { articleId } = useNavigation();
+  const { slug } = useParams<{ slug: string }>()
+  const navigate = useNavigate()
 
-  if (!articleId) {
-    return null;
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [slug])
+
+  if (!slug) {
+    return (
+      <div style={{ textAlign: 'center', padding: '40px' }}>
+        <h2>Article not found</h2>
+        <button onClick={() => navigate('/blog')} style={{ padding: '10px 20px', cursor: 'pointer' }}>
+          Back to Blog
+        </button>
+      </div>
+    )
   }
 
   return (
     <div className="article-page-container">
-      <BlogArticle articleId={articleId} />
-      <div className="article-page-navigation">
-        
-      </div>
+      <BlogArticle articleId={slug} />
     </div>
-  );
-};
+  )
+}
 
-export default ArticlePage;
+export default ArticlePage

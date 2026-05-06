@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/header'
 import HeaderSlideshow from './components/HeaderSlideshow'
 import Features from './components/Features'
@@ -8,31 +9,22 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ArticlePage from './pages/ArticlePage'
-import { PageProvider, useNavigation } from './context/PageContext'
+import HomePage from './pages/HomePage'
+import BlogPage from './pages/BlogPage'
+import { PageProvider } from './context/PageContext'
 import './App.css'
 
-function AppContent() {
-  const { currentPage } = useNavigation();
-
-  if (currentPage === 'article') {
-    return (
-      <>
-        <Header />
-        <ArticlePage />
-      </>
-    );
-  }
-
+function AppLayout() {
   return (
     <>
       <Header />
-      <HeaderSlideshow />
-      <Features />
-      <Vehicles />
-      <Tours />
-      <Blog />
-      <About />
-      <Contact />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<ArticlePage />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   )
@@ -40,9 +32,11 @@ function AppContent() {
 
 function App() {
   return (
-    <PageProvider>
-      <AppContent />
-    </PageProvider>
+    <Router>
+      <PageProvider>
+        <AppLayout />
+      </PageProvider>
+    </Router>
   )
 }
 

@@ -14,6 +14,7 @@ export interface BlogPostPreview {
   category: string;
   image: string;
   readTime: string;
+  slug?: string;
 }
 
 export interface BlogArticleContent {

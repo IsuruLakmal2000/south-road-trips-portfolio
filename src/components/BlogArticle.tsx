@@ -1,14 +1,14 @@
 import './BlogArticle.css';
+import { useNavigate } from 'react-router-dom';
 import { blogArticles } from '../data/blogArticles';
 import type { BlogArticleData, BlogArticleContent } from '../data/blogArticles';
-import { useNavigation } from '../context/PageContext';
 
 interface BlogArticleProps {
   articleId?: string;
 }
 
 const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
-  const { goToBlog } = useNavigation();
+  const navigate = useNavigate();
   const article = blogArticles[articleId] as BlogArticleData | undefined;
 
   if (!article) {
@@ -133,7 +133,7 @@ const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
 
         {/* Back Button */}
         <div className="article-footer">
-          <button type="button" onClick={goToBlog} className="back-to-blog-btn">
+          <button type="button" onClick={() => navigate('/blog')} className="back-to-blog-btn">
             <svg className="back-arrow" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
             </svg>

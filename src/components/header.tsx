@@ -1,25 +1,32 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 import logo from '../assets/Asset-3.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="header-inner">
         
         <div className="logo">
-          <img src={logo} alt="South Road Trips" className="logo-image" />
+          <Link to="/" onClick={handleNavClick}>
+            <img src={logo} alt="South Road Trips" className="logo-image" />
+          </Link>
         </div>
 
         <nav className={`nav ${menuOpen ? "active" : ""}`}>
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#vehicles" className="nav-link">Vehicles</a>
-          <a href="#tours" className="nav-link">Tours</a>
-          <a href="#blog" className="nav-link">Blog</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#contact" className="nav-link">Contact Us</a>
+          <Link to="/" className="nav-link" onClick={handleNavClick}>Home</Link>
+          <a href="/#vehicles" className="nav-link" onClick={handleNavClick}>Vehicles</a>
+          <a href="/#tours" className="nav-link" onClick={handleNavClick}>Tours</a>
+          <Link to="/blog" className="nav-link" onClick={handleNavClick}>Blog</Link>
+          <a href="/#about" className="nav-link" onClick={handleNavClick}>About</a>
+          <a href="/#contact" className="nav-link" onClick={handleNavClick}>Contact Us</a>
           <a 
             href="https://wa.me/94764549169?text=Hi%20South%20Road%20Trips!%20I'd%20like%20to%20make%20a%20booking.%20Can%20you%20help%20me%3F" 
             target="_blank" 

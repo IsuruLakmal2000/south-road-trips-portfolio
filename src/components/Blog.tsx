@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Blog.css';
 import { blogPostPreviews } from '../data/blogArticles';
-import { useNavigation } from '../context/PageContext';
 
 const Blog = () => {
-  const { navigateToArticle } = useNavigation();
   const [filteredPosts, setFilteredPosts] = useState(blogPostPreviews);
   const [activeFilter, setActiveFilter] = useState('All');
 
@@ -62,15 +61,15 @@ const Blog = () => {
 
                 <div className="blog-footer">
                   <span className="blog-author">By {post.author}</span>
-                  <button
-                    onClick={() => navigateToArticle(post.id)}
+                  <Link
+                    to={`/blog/${post.id}`}
                     className="read-more-btn"
                   >
                     Read More
                     <svg className="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>
