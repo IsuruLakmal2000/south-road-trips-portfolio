@@ -3,7 +3,7 @@ import BlogArticle from '../components/BlogArticle';
 import { useNavigation } from '../context/PageContext';
 
 const ArticlePage = () => {
-  const { articleId, goHome } = useNavigation();
+  const { articleId } = useNavigation();
 
   if (!articleId) {
     return null;
