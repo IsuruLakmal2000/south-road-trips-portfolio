@@ -1,39 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://southroadtrips.com/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Tours Page -->
   <url>
-    <loc>https://southroadtrips.com/#home</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://southroadtrips.com/tours</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
+
+  <!-- Vehicles Page -->
   <url>
-    <loc>https://southroadtrips.com/#vehicles</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://southroadtrips.com/vehicles</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
+
+  <!-- Blog Main Page -->
   <url>
-    <loc>https://southroadtrips.com/#tours</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://southroadtrips.com/blog</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
+
+  <!-- About Page -->
   <url>
-    <loc>https://southroadtrips.com/#about</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://southroadtrips.com/about</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
+
+  <!-- Contact Page -->
   <url>
-    <loc>https://southroadtrips.com/#contact</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://southroadtrips.com/contact</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <!-- Article 1: Sea Turtle Conservation -->
+  <url>
+    <loc>https://southroadtrips.com/blog/sea-turtle-conservation-ahangama</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 2: Kayaking in Hikkaduwa Lagoon -->
+  <url>
+    <loc>https://southroadtrips.com/blog/kayaking-hikkaduwa-lagoon</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 3: Hidden Beaches of Sri Lanka -->
+  <url>
+    <loc>https://southroadtrips.com/blog/hidden-beaches-sri-lanka</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 4: Wildlife Photography Guide -->
+  <url>
+    <loc>https://southroadtrips.com/blog/wildlife-photography-yala-leopards</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 5: Best Time to Visit Sri Lanka -->
+  <url>
+    <loc>https://southroadtrips.com/blog/best-time-visit-sri-lanka</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 6: Sri Lankan Cuisine Guide -->
+  <url>
+    <loc>https://southroadtrips.com/blog/sri-lankan-cuisine-guide</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 7: Road Trip Safety in Sri Lanka -->
+  <url>
+    <loc>https://southroadtrips.com/blog/road-trip-safety-sri-lanka</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Article 8: Adventure Activities in Sri Lanka -->
+  <url>
+    <loc>https://southroadtrips.com/blog/adventure-activities-sri-lanka</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
 </urlset>
