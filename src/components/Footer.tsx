@@ -47,36 +47,20 @@ const Footer = () => {
             <div className="footer-column">
               <h4>Services</h4>
               <ul>
-                <li><a href="#">Vehicle Rental</a></li>
-                <li><a href="#">Guided Tours</a></li>
-                <li><a href="#">Custom Packages</a></li>
-                <li><a href="#">Airport Transfer</a></li>
-                <li><a href="#">Corporate Services</a></li>
+                <li><a href="#vehicles">Vehicle Rental</a></li>
+                <li><a href="#tours">Guided Tours</a></li>
+                <li><a href="#tours">Custom Packages</a></li>
+                <li><a href="#tours">Airport Transfer</a></li>
               </ul>
             </div>
 
             <div className="footer-column">
               <h4>Support</h4>
               <ul>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Booking Guide</a></li>
-                <li><a href="#">Payment Options</a></li>
-                <li><a href="#">Cancellation Policy</a></li>
-                <li><a href="#">Travel Insurance</a></li>
+                <li><a href="/faqs">FAQs</a></li>
+                <li><a href="/booking-guide">Booking Guide</a></li>
               </ul>
             </div>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <p>&copy; {currentYear} South Road Trips. All rights reserved.</p>
-          <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <span>•</span>
-            <a href="#">Terms of Service</a>
-            <span>•</span>
-            <a href="#">Cookie Policy</a>
           </div>
         </div>
       </div>

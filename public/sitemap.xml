@@ -48,6 +48,22 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- FAQs Page -->
+  <url>
+    <loc>https://southroadtrips.com/faqs</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Booking Guide Page -->
+  <url>
+    <loc>https://southroadtrips.com/booking-guide</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
   <!-- Blog Articles -->
   <!-- Article 1: Sea Turtle Conservation -->
   <url>
