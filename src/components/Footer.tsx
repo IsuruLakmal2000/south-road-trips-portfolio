@@ -2,7 +2,7 @@ import './Footer.css';
 import logo from '../assets/Asset-3.png';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  
 
   return (
     <footer className="footer">
