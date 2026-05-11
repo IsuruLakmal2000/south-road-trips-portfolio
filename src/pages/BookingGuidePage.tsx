@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import '../styles/BookingGuidePage.css';
+import { pageMetadata } from '../utils/seoHelpers';
 
 const BookingGuidePage = () => {
   const navigate = useNavigate();
@@ -15,7 +17,28 @@ const BookingGuidePage = () => {
     }, 100);
   };
   return (
-    <div className="booking-guide-page">
+    <>
+      <Helmet>
+        <title>{pageMetadata.bookingGuide.title}</title>
+        <meta name="description" content={pageMetadata.bookingGuide.description} />
+        <meta name="keywords" content={pageMetadata.bookingGuide.keywords} />
+        <link rel="canonical" href={pageMetadata.bookingGuide.canonical} />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content={pageMetadata.bookingGuide.ogType} />
+        <meta property="og:title" content={pageMetadata.bookingGuide.title} />
+        <meta property="og:description" content={pageMetadata.bookingGuide.description} />
+        <meta property="og:url" content={pageMetadata.bookingGuide.canonical} />
+        <meta property="og:image" content={pageMetadata.bookingGuide.ogImage} />
+        
+        {/* Twitter Tags */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={pageMetadata.bookingGuide.title} />
+        <meta property="twitter:description" content={pageMetadata.bookingGuide.description} />
+        <meta property="twitter:image" content={pageMetadata.bookingGuide.ogImage} />
+      </Helmet>
+      
+      <div className="booking-guide-page">
       <div className="booking-guide-container">
         {/* Header Section */}
         <div className="booking-guide-header">
@@ -296,6 +319,7 @@ const BookingGuidePage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

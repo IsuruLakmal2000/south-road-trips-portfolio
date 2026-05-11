@@ -4,6 +4,19 @@
   "env": {
     "VITE_ENV": "production"
   },
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.southroadtrips.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "southroadtrips.com"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

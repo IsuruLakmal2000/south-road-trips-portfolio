@@ -3,7 +3,6 @@ import logo from '../assets/Asset-3.png';
 
 const Footer = () => {
   
-
   return (
     <footer className="footer">
       <div className="footer-container">

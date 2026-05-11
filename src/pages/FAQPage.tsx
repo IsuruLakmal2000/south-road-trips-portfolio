@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../styles/FAQPage.css';
+import { pageMetadata } from '../utils/seoHelpers';
 
 interface FAQ {
   id: number;
@@ -187,25 +189,46 @@ const FAQPage = () => {
   };
 
   return (
-    <div className="faq-page">
-      <div className="faq-container">
-        {/* Header Section */}
-        <div className="faq-header">
-          <h1>Frequently Asked Questions</h1>
-          <p>Find answers to common questions about booking, vehicles, tours, safety, and travel tips for your South Road Trips adventure.</p>
-        </div>
+    <>
+      <Helmet>
+        <title>{pageMetadata.faqs.title}</title>
+        <meta name="description" content={pageMetadata.faqs.description} />
+        <meta name="keywords" content={pageMetadata.faqs.keywords} />
+        <link rel="canonical" href={pageMetadata.faqs.canonical} />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:type" content={pageMetadata.faqs.ogType} />
+        <meta property="og:title" content={pageMetadata.faqs.title} />
+        <meta property="og:description" content={pageMetadata.faqs.description} />
+        <meta property="og:url" content={pageMetadata.faqs.canonical} />
+        <meta property="og:image" content={pageMetadata.faqs.ogImage} />
+        
+        {/* Twitter Tags */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={pageMetadata.faqs.title} />
+        <meta property="twitter:description" content={pageMetadata.faqs.description} />
+        <meta property="twitter:image" content={pageMetadata.faqs.ogImage} />
+      </Helmet>
+      
+      <div className="faq-page">
+        <div className="faq-container">
+          {/* Header Section */}
+          <div className="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about booking, vehicles, tours, safety, and travel tips for your South Road Trips adventure.</p>
+          </div>
 
-        {/* Category Filter */}
-        <div className="faq-categories">
-          {categories.map(category => (
-            <button
-              key={category}
-              className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
+          {/* Category Filter */}
+          <div className="faq-categories">
+            {categories.map(category => (
+              <button
+                key={category}
+                className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
         </div>
 
         {/* FAQ List */}
@@ -257,6 +280,7 @@ const FAQPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

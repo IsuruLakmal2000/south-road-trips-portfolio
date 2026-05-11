@@ -1,0 +1,81 @@
+# Apache Rewrite Rules Configuration for South Road Trips
+# This file configures URL rewrites and redirects for Apache servers
+# Place this in the public_html root directory
+
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Remove www redirect (optional - uncomment if needed)
+  # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  # RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+  # Force www and HTTPS (301 redirect from non-www to www)
+  # Handle all non-www traffic
+  RewriteCond %{HTTP_HOST} ^southroadtrips\.com [NC]
+  RewriteRule ^(.*)$ https://www.southroadtrips.com/$1 [R=301,L]
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Rewrite routes to index.html for SPA (React Router)
+  # Skip actual files and directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>
+
+# Prevent access to sensitive directories
+<FilesMatch "^\.|\.env|\.git|node_modules">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Enable gzip compression for better performance
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Set proper cache headers for better performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  
+  # CSS
+  ExpiresByType text/css "access plus 1 month"
+  
+  # JavaScript
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  
+  # Fonts
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType application/x-font-opentype "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  
+  # HTML (keep fresh)
+  ExpiresByType text/html "access plus 1 day"
+  
+  # Default
+  ExpiresDefault "access plus 1 day"
+</IfModule>

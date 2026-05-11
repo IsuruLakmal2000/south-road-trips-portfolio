@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Blog.css';
 import { blogPostPreviews } from '../data/blogArticles';
+import { injectStructuredData, removeStructuredData } from '../utils/structuredData';
+import { CANONICAL_DOMAIN } from '../utils/seoHelpers';
 
 const Blog = () => {
   const [filteredPosts, setFilteredPosts] = useState(blogPostPreviews);
@@ -9,6 +11,51 @@ const Blog = () => {
 
   // Get unique categories from blog posts
   const categories = ['All', ...new Set(blogPostPreviews.map(post => post.category))];
+
+  // Inject structured data for rental services mentioned in blog
+  useEffect(() => {
+    // Car Rental Service Product Data (for blog context)
+    const blogCarRentalData = {
+      '@context': 'https://schema.org/',
+      '@type': 'Product',
+      name: 'Car Rental Service',
+      description: 'Professional car rental services in Sri Lanka for comfortable road trips and family journeys',
+      url: `${CANONICAL_DOMAIN}/blog`,
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'LKR',
+        price: 'Contact for pricing',
+        availability: 'https://schema.org/InStock',
+        url: 'https://wa.me/94764549169?text=Hi!%20I%20found%20your%20site%20through%20the%20blog.%20I\'m%20interested%20in%20car%20rental%20services.',
+      },
+    };
+
+    // Scooter Rental Service Product Data (for blog context)
+    const blogScooterRentalData = {
+      '@context': 'https://schema.org/',
+      '@type': 'Product',
+      name: 'Scooter Rental Service',
+      description: 'Affordable and reliable scooter rentals for exploring Sri Lanka\'s stunning destinations',
+      url: `${CANONICAL_DOMAIN}/blog`,
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'LKR',
+        price: 'Contact for pricing',
+        availability: 'https://schema.org/InStock',
+        url: 'https://wa.me/94764549169?text=Hi!%20I%20found%20your%20site%20through%20the%20blog.%20I\'m%20interested%20in%20scooter%20rental%20services.',
+      },
+    };
+
+    // Inject structured data
+    injectStructuredData(blogCarRentalData, 'blog-car-rental-schema');
+    injectStructuredData(blogScooterRentalData, 'blog-scooter-rental-schema');
+
+    // Cleanup on unmount
+    return () => {
+      removeStructuredData('blog-car-rental-schema');
+      removeStructuredData('blog-scooter-rental-schema');
+    };
+  }, []);
 
   // Handle filter changes
   useEffect(() => {

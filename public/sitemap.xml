@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://southroadtrips.com/</loc>
+    <loc>https://www.southroadtrips.com/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
 
   <!-- Tours Page -->
   <url>
-    <loc>https://southroadtrips.com/tours</loc>
+    <loc>https://www.southroadtrips.com/tours</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
@@ -18,7 +18,7 @@
 
   <!-- Vehicles Page -->
   <url>
-    <loc>https://southroadtrips.com/vehicles</loc>
+    <loc>https://www.southroadtrips.com/vehicles</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -26,7 +26,7 @@
 
   <!-- Blog Main Page -->
   <url>
-    <loc>https://southroadtrips.com/blog</loc>
+    <loc>https://www.southroadtrips.com/blog</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -34,7 +34,7 @@
 
   <!-- About Page -->
   <url>
-    <loc>https://southroadtrips.com/about</loc>
+    <loc>https://www.southroadtrips.com/about</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -42,7 +42,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://southroadtrips.com/contact</loc>
+    <loc>https://www.southroadtrips.com/contact</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -50,7 +50,7 @@
 
   <!-- FAQs Page -->
   <url>
-    <loc>https://southroadtrips.com/faqs</loc>
+    <loc>https://www.southroadtrips.com/faqs</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -58,7 +58,7 @@
 
   <!-- Booking Guide Page -->
   <url>
-    <loc>https://southroadtrips.com/booking-guide</loc>
+    <loc>https://www.southroadtrips.com/booking-guide</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -67,7 +67,7 @@
   <!-- Blog Articles -->
   <!-- Article 1: Sea Turtle Conservation -->
   <url>
-    <loc>https://southroadtrips.com/blog/sea-turtle-conservation-ahangama</loc>
+    <loc>https://www.southroadtrips.com/blog/sea-turtle-conservation-ahangama</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -75,7 +75,7 @@
 
   <!-- Article 2: Kayaking in Hikkaduwa Lagoon -->
   <url>
-    <loc>https://southroadtrips.com/blog/kayaking-hikkaduwa-lagoon</loc>
+    <loc>https://www.southroadtrips.com/blog/kayaking-hikkaduwa-lagoon</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -83,7 +83,7 @@
 
   <!-- Article 3: Hidden Beaches of Sri Lanka -->
   <url>
-    <loc>https://southroadtrips.com/blog/hidden-beaches-sri-lanka</loc>
+    <loc>https://www.southroadtrips.com/blog/hidden-beaches-sri-lanka</loc>
     <lastmod>2026-03-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -91,7 +91,7 @@
 
   <!-- Article 4: Wildlife Photography Guide -->
   <url>
-    <loc>https://southroadtrips.com/blog/wildlife-photography-yala-leopards</loc>
+    <loc>https://www.southroadtrips.com/blog/wildlife-photography-yala-leopards</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -99,7 +99,7 @@
 
   <!-- Article 5: Best Time to Visit Sri Lanka -->
   <url>
-    <loc>https://southroadtrips.com/blog/best-time-visit-sri-lanka</loc>
+    <loc>https://www.southroadtrips.com/blog/best-time-visit-sri-lanka</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -107,7 +107,7 @@
 
   <!-- Article 6: Sri Lankan Cuisine Guide -->
   <url>
-    <loc>https://southroadtrips.com/blog/sri-lankan-cuisine-guide</loc>
+    <loc>https://www.southroadtrips.com/blog/sri-lankan-cuisine-guide</loc>
     <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -115,7 +115,7 @@
 
   <!-- Article 7: Road Trip Safety in Sri Lanka -->
   <url>
-    <loc>https://southroadtrips.com/blog/road-trip-safety-sri-lanka</loc>
+    <loc>https://www.southroadtrips.com/blog/road-trip-safety-sri-lanka</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -123,7 +123,7 @@
 
   <!-- Article 8: Adventure Activities in Sri Lanka -->
   <url>
-    <loc>https://southroadtrips.com/blog/adventure-activities-sri-lanka</loc>
+    <loc>https://www.southroadtrips.com/blog/adventure-activities-sri-lanka</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>

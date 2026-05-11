@@ -1,0 +1,11 @@
+# Netlify Redirect Configuration
+# This file configures redirects for the South Road Trips website
+
+# 301 Redirect from non-www to www domain (permanent)
+# Handles: southroadtrips.com/* -> www.southroadtrips.com/*
+http://southroadtrips.com/* https://www.southroadtrips.com/:splat 301!
+https://southroadtrips.com/* https://www.southroadtrips.com/:splat 301!
+
+# SPA Routing: Route all requests to index.html for React Router
+# Must be last rule, catch all remaining routes
+/* /index.html 200

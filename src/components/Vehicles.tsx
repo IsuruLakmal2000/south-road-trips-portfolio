@@ -1,10 +1,59 @@
+import { useEffect } from 'react';
 import './Vehicles.css';
 import scooter from '../assets/vehicles/scooter.png'
 import motorbike from '../assets/vehicles/motorbike.jpg'
 import tuktuk from '../assets/vehicles/tuktuk.png'
 import car from '../assets/vehicles/car.png'
+import { injectStructuredData, removeStructuredData } from '../utils/structuredData';
+import { CANONICAL_DOMAIN } from '../utils/seoHelpers';
 
 const Vehicles = () => {
+  // Inject structured data for vehicles on component mount
+  useEffect(() => {
+    // Scooter Rental Service Product Data
+    const scooterData = {
+      '@context': 'https://schema.org/',
+      '@type': 'Product',
+      name: 'Scooter Rental Service',
+      description: 'Fuel efficient automatic scooter rentals perfect for solo travelers and city exploration',
+      image: scooter,
+      url: `${CANONICAL_DOMAIN}/#vehicles`,
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'LKR',
+        price: 'Contact for pricing',
+        availability: 'https://schema.org/InStock',
+        url: 'https://wa.me/94764549169?text=Hi!%20I\'m%20interested%20in%20booking%20a%20Scooter%20rental.%20Can%20you%20provide%20pricing%20details%3F',
+      },
+    };
+
+    // Car Rental Service Product Data
+    const carData = {
+      '@context': 'https://schema.org/',
+      '@type': 'Product',
+      name: 'Car Rental Service',
+      description: 'Comfortable automatic cars with air conditioning, perfect for families and groups of up to 5 passengers',
+      image: car,
+      url: `${CANONICAL_DOMAIN}/#vehicles`,
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'LKR',
+        price: 'Contact for pricing',
+        availability: 'https://schema.org/InStock',
+        url: 'https://wa.me/94764549169?text=Hi!%20I\'m%20interested%20in%20booking%20a%20Car%20rental.%20Can%20you%20provide%20pricing%20details%3F',
+      },
+    };
+
+    // Inject both product data
+    injectStructuredData(scooterData, 'scooter-product-schema');
+    injectStructuredData(carData, 'car-product-schema');
+
+    // Cleanup on unmount
+    return () => {
+      removeStructuredData('scooter-product-schema');
+      removeStructuredData('car-product-schema');
+    };
+  }, []);
   const vehicles = [
     {
       name: 'Scooter',

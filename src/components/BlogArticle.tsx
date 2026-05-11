@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 import './BlogArticle.css';
 import { useNavigate } from 'react-router-dom';
 import { blogArticles } from '../data/blogArticles';
 import type { BlogArticleData, BlogArticleContent } from '../data/blogArticles';
+import { injectStructuredData, removeStructuredData } from '../utils/structuredData';
+import { CANONICAL_DOMAIN } from '../utils/seoHelpers';
 
 interface BlogArticleProps {
   articleId?: string;
@@ -10,6 +13,42 @@ interface BlogArticleProps {
 const BlogArticle = ({ articleId = 'sea-turtle' }: BlogArticleProps) => {
   const navigate = useNavigate();
   const article = blogArticles[articleId] as BlogArticleData | undefined;
+
+  // Inject Article schema for blog posts
+  useEffect(() => {
+    if (article) {
+      const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: article.title,
+        description: article.metaDescription || article.excerpt,
+        image: article.image || article.ogImage,
+        datePublished: article.date,
+        author: {
+          '@type': 'Organization',
+          name: article.author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'South Road Trips',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${CANONICAL_DOMAIN}/logo.png`,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${CANONICAL_DOMAIN}/blog/${article.slug || articleId}`,
+        },
+      };
+
+      injectStructuredData(articleSchema, `article-schema-${articleId}`);
+
+      return () => {
+        removeStructuredData(`article-schema-${articleId}`);
+      };
+    }
+  }, [article, articleId]);
 
   if (!article) {
     return <div className="article-not-found">Article not found</div>;
