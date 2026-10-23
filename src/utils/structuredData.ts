@@ -6,6 +6,7 @@
 import { CANONICAL_DOMAIN } from './seoHelpers';
 
 export interface OfferData {
+  '@type'?: string;
   priceCurrency: string;
   price: string;
   availability?: string;

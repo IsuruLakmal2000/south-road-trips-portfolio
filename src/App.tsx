@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage'
 import BlogPage from './pages/BlogPage'
 import FAQPage from './pages/FAQPage'
 import BookingGuidePage from './pages/BookingGuidePage'
+import PlacesRoutesPage from './pages/PlacesRoutesPage'
 import { PageProvider } from './context/PageContext'
 import { CANONICAL_DOMAIN } from './utils/seoHelpers'
 import './App.css'
@@ -80,6 +81,7 @@ function AppLayout() {
           <Route path="/blog/:slug" element={<ArticlePage />} />
           <Route path="/faqs" element={<FAQPage />} />
           <Route path="/booking-guide" element={<BookingGuidePage />} />
+          <Route path="/places-routes" element={<PlacesRoutesPage />} />
         </Routes>
       </main>
       <Footer />

@@ -25,6 +25,7 @@ const Header = () => {
           <a href="/#vehicles" className="nav-link" onClick={handleNavClick}>Vehicles</a>
           <a href="/#tours" className="nav-link" onClick={handleNavClick}>Tours</a>
           <Link to="/blog" className="nav-link" onClick={handleNavClick}>Blog</Link>
+          <Link to="/places-routes" className="nav-link" onClick={handleNavClick}>Places / Routes</Link>
           <a href="/#about" className="nav-link" onClick={handleNavClick}>About</a>
           <a href="/#contact" className="nav-link" onClick={handleNavClick}>Contact Us</a>
           <a 
